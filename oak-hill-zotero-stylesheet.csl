@@ -752,6 +752,15 @@
       <text variable="URL" prefix=" Online: "/>
     </group>
   </macro>
+  <macro name="reprint">
+    <group delimiter=", ">
+		<group delimiter=": ">
+		  <text variable="reprinted-place"/>
+		  <text variable="reprinted-publisher"/>
+		</group>
+		<text variable="reprinted-date"/>
+	</group>
+  </macro>
   <citation et-al-min="4" et-al-use-first="1" disambiguate-add-names="true">
     <layout suffix="." delimiter="; ">
       <choose>
@@ -777,6 +786,7 @@
           </group>
           <text macro="issue-note"/>
           <text macro="locators-newspaper" prefix=", "/>
+		  <text macro="reprint" prefix="; repr. (" suffix=")"/>
           <text macro="point-locators"/>
 					<choose>
 						<if type="book" match="none">
@@ -813,6 +823,7 @@
 					<text macro="access" prefix=". "/>
 				</if>
 			</choose>
+	  <text macro="reprint" prefix=". Repr., "/>
     </layout>
   </bibliography>
 </style>
